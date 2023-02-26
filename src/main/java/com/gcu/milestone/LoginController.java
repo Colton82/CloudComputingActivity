@@ -1,6 +1,7 @@
 package com.gcu.milestone;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -8,11 +9,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import business.SecurityServiceInterface;
 import model.LoginModel;
 
 @Controller
 public class LoginController
 {
+
+    @Autowired
+    SecurityServiceInterface securityService;
+
     @GetMapping("/login")
     public String display(Model model)
     {
@@ -31,9 +37,16 @@ public class LoginController
             return "login";
         }
 
-        // NOT COMPLETE: authenticate user....
+        if(securityService.isAuthenticated(loginModel))
+        {
+            model.addAttribute("LoginModel", loginModel);
+            return "loginSuccess";
+        }
+        else
+        {
+            return "login";
+        }
 
-        return "login";
     }
 
 }
