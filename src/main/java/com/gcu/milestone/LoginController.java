@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import model.LoginModel;
 
 @Controller
-public class LoginController 
+public class LoginController
 {
     @GetMapping("/login")
     public String display(Model model)
@@ -20,4 +20,20 @@ public class LoginController
         model.addAttribute("loginModel", new LoginModel());
         return "login";
     }
+
+
+    @PostMapping("/processLogin")
+    public String processLogin(LoginModel loginModel, BindingResult br, Model model)
+    {
+        if(br.hasErrors())
+        {
+            model.addAttribute("title", "Login Form");
+            return "login";
+        }
+
+        // NOT COMPLETE: authenticate user....
+
+        return "login";
+    }
+
 }
