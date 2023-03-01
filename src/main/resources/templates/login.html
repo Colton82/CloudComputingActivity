@@ -31,6 +31,10 @@
           font-size: 3.5rem;
         }
       }
+
+      .invalidLoginText{
+        color: red;
+      }
     </style>
 
     
@@ -62,12 +66,16 @@
 
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    
+    <br/>
 
+    <div class="invalidLoginText">
+      <p th:text="${error}"></p>
+    </div>
     <div th:if="${#fields.hasErrors('*')}">List of Errors</div>
             <div th:each="err : ${#fields.errors('*')}">
                 <span th:text="${err}" class="fieldError"></span>
-            </div>
+    </div>
 
 
   </form>

@@ -22,10 +22,12 @@ public class ValidLogin implements SecurityServiceInterface{
         }
         if(success)
         {
+
             return true;
         }
         else
         {
+            System.out.println("LOGIN FAILED");
             return false;
         }
 

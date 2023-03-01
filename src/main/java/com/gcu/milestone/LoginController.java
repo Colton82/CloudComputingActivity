@@ -44,6 +44,7 @@ public class LoginController
         }
         else
         {
+            model.addAttribute("error", "Invalid Credentials!");
             return "login";
         }
 
