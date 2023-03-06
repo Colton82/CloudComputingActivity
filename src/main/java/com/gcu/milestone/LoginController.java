@@ -40,7 +40,7 @@ public class LoginController
         if(securityService.isAuthenticated(loginModel))
         {
             model.addAttribute("LoginModel", loginModel);
-            return "/properties/properties";
+            return "/properties/properties1";
         }
         else
         {
@@ -48,5 +48,4 @@ public class LoginController
             return "/login/login";
         }
     }
-
 }
