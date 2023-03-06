@@ -40,7 +40,7 @@ public class LoginController
         if(securityService.isAuthenticated(loginModel))
         {
             model.addAttribute("LoginModel", loginModel);
-            return "/layouts/navbar";
+            return "/properties/properties";
         }
         else
         {
