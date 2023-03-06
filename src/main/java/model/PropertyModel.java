@@ -14,6 +14,13 @@ public class PropertyModel
 
     public PropertyModel()
     {
+        this.nameOfProperty = "null";
+        this.location = "none";
+        this.squareFeet = 0;
+        this.dateOfConstruction = new Date(2003, 8, 3);
+        this.photoFileName = "C:example/path/variable";
+        this.description = "This is a filler property entry";
+        this.value = 0;
 
     }
 
