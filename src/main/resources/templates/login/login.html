@@ -41,9 +41,8 @@
     <!-- Custom styles for this template -->
     <link th:href="@{/css/signin.css}" rel="stylesheet" />
   </head>
-  <body class="text-center">
-    
-<main class="form-signin">
+<body class="text-center">
+<main class="form-signin" layout:fragment="content">
   <form th:action="@{processLogin}" th:object="${loginModel}" method="post">
     <img class="mb-4" th:src="@{/img/logo.jpeg}" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>

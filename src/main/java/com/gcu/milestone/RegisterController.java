@@ -12,8 +12,11 @@ public class RegisterController
     @GetMapping("/register")
     public String register(Model model)
     {
-        System.out.println("REGISTER CONTROLLER");
         model.addAttribute("Model", new UserModel());
-        return "register";
+        return "/register/register";
     }
+
+    
+
+
 }

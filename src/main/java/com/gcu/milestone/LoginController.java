@@ -24,7 +24,7 @@ public class LoginController
     {
         model.addAttribute("title", "Login Form");
         model.addAttribute("loginModel", new LoginModel());
-        return "login";
+        return "/login/login";
     }
 
 
@@ -34,20 +34,19 @@ public class LoginController
         if(br.hasErrors())
         {
             model.addAttribute("title", "Login Form");
-            return "login";
+            return "/login/login";
         }
 
         if(securityService.isAuthenticated(loginModel))
         {
             model.addAttribute("LoginModel", loginModel);
-            return "loginSuccess";
+            return "/layouts/navbar";
         }
         else
         {
             model.addAttribute("error", "Invalid Credentials!");
-            return "login";
+            return "/login/login";
         }
-
     }
 
 }

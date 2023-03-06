@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymelaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+
+    <style>
+        .header-section{
+            border: 2px dashed red;
+        }
+        .footer-section {
+            border:2px greed dotted;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <div th:replace="layouts/navbar :: header">My Header</div>
+
+        <section layout:fragment="content">
+            <p>My body content</p>
+        </section>
+
+        <div class="footer-section" th:replace="layouts/commonFooter :: footer">My Footer</div>
+
+    </div>
+</body>
+</html>
