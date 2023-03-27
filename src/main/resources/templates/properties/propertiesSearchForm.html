@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap core CSS -->
+
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+      
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
+      
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <title>High-End Homes</title>
+    </head>
+    <body>
+
+        <div class="container mt-3 mb-3">
+
+            <form action="#" th:action="@{/properties/searchResults}" th:object="${searchPropertyModel}" method="post">
+            
+              <div class="mb-3">
+                <label for="searchTerm" class="form-label">Search for an item</label>
+                <input type="text" class="form-control" id="searchTerm" placeHolder="search for something interesting" required th:field="*{searchTerm}">
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+         
+        </div>
+
+        
+    </body>
+</html>

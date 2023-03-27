@@ -4,6 +4,7 @@ import java.sql.Date;
 
 public class PropertyModel 
 {
+    public int id;
     public String nameOfProperty;
     public String location;
     public int squareFeet;
@@ -14,6 +15,7 @@ public class PropertyModel
 
     public PropertyModel()
     {
+        this.id = 0;
         this.nameOfProperty = "null";
         this.location = "none";
         this.squareFeet = 0;
@@ -24,8 +26,9 @@ public class PropertyModel
 
     }
 
-    public PropertyModel(String nameOfProperty, String location, int squareFeet, Date dateOfConstruction,
-            String photoFileName, String description, double value) {
+    public PropertyModel(int id, String nameOfProperty, String location, int squareFeet, Date dateOfConstruction,
+        String photoFileName, String description, double value) {
+        this.id = id;
         this.nameOfProperty = nameOfProperty;
         this.location = location;
         this.squareFeet = squareFeet;
@@ -35,7 +38,14 @@ public class PropertyModel
         this.value = value;
     }
 
-
+    public int getId()
+    {
+        return id;
+    }
+    public void setId(int id)
+    {
+        this.id = id;
+    }
     public String getNameOfProperty() {
         return nameOfProperty;
     }

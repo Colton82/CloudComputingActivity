@@ -35,6 +35,10 @@
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Location</th>
+                    <th>Square Feet</th>
+                    <th>Date of Construction</th>
+                    <th>Photo</th>
                     <th>Description</th>
                     <th>Value</th>
                 </tr>
@@ -42,6 +46,10 @@
             <tbody>
                 <tr th:each="property : ${properties}">
                     <td th:text="${property.nameOfProperty}">Name</td>
+                    <td th:text="${property.location}">Location</td>
+                    <td th:text="${property.squareFeet}">Square Feet</td>
+                    <td th:text="${property.dateOfConstruction}">Date of Construction</td>
+                    <td th:text="${property.photoFileName}">Photo</td>
                     <td th:text="${property.description}">Description</td>
                     <td th:text="${property.value}">Value</td>
                 </tr>
