@@ -117,6 +117,7 @@ public class PropertiesController
     @PostMapping("/editForm")
     public String editPropertyForm(Model model, PropertyModel property)
     {
+        System.out.println(property.photoFileName);
         model.addAttribute("propertyModel", property);
         return "properties/editForm";
     }
