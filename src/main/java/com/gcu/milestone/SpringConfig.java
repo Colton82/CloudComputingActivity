@@ -2,7 +2,6 @@ package com.gcu.milestone;
 
 import javax.sql.DataSource;
 
-import org.codehaus.groovy.runtime.m12n.PropertiesModuleFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

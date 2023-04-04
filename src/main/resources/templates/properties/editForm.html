@@ -33,7 +33,9 @@
     </head>
     <body>
       <div layout:fragment="content" class="container-lg">
-        <form action="#" th:action="@{/properties/addNew}" th:object="${propertyModel}" method="post">
+        <form action="#" th:action="@{/properties/update}" th:object="${propertyModel}" method="post">
+          
+          <input hidden id="propertyNameInput" th:field="*{id}">
 
           <div class="mb-3">
             <label for="propertyNameInput" class="form-label">Property Name</label>

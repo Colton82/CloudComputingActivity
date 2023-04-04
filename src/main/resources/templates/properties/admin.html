@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-End Homes</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+      
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
+      
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <title>High-End Homes</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+          <div class="container">
+            <h1>Properties</h1>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Square Feet</th>
+                    <th scope="col">Date of Construction</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Value</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Edit</th>  
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="property : ${properties}">
+                    <td th:text="${property.id}">Name</td>
+                    <td th:text="${property.nameOfProperty}">Name</td>
+                    <td th:text="${property.location}">Location</td>
+                    <td th:text="${property.squareFeet}">Square Feet</td>
+                    <td th:text="${property.dateOfConstruction}">Date of Construction</td>
+                    <td><img th:src="${property.photoFileName}" width="150px"></td>
+                    <td th:text="${property.description}">Description</td>
+                    <td th:text="${property.value}">Value</td>
+                    <td>
+                      <form action="#" th:action="@{/properties/delete}" th:object="${property}" method="post"> 
+                       <input name="id" type="hidden" th:value="${property.id}">
+                       <input name="nameOfProperty"type="hidden" th:value="${property.nameOfProperty}">
+                       <input name="location"type="hidden" th:value="${property.location}">
+                       <input name="squareFeet" type="hidden" th:value="${property.squareFeet}">
+                       <input name="dateOfConstruction" type="hidden"  th:value="${property.dateOfConstruction}">
+                       <input name="description" type="hidden" th:value="${property.description}">
+                       <input name="value" type="hidden" th:value="${property.value}">
+                       <button class="btn btn-danger" type="submit" name="deleteItem">Delete</button>
+                      </form>
+                     </td>
+                     <td>
+                      <form action="#" th:action="@{/properties/editForm}" th:object="${property}" method="post"> 
+                        <input name="id" type="hidden" th:value="${property.id}">
+                        <input name="nameOfProperty"type="hidden" th:value="${property.nameOfProperty}">
+                        <input name="location"type="hidden" th:value="${property.location}">
+                        <input name="squareFeet" type="hidden" th:value="${property.squareFeet}">
+                        <input name="dateOfConstruction" type="hidden"  th:value="${property.dateOfConstruction}">
+                        <input name="description" type="hidden" th:value="${property.description}">
+                        <input name="value" type="hidden" th:value="${property.value}">
+                          <button class="btn btn-secondary" type="submit" name="deleteItem">Edit</button>
+                      </form>
+                     </td> 
+                  </tr> 
+                </tbody>
+              </table>
+
+              <!-- Add new property button -->
+                <form action="#" th:action="@{/properties/addNewForm}">
+                  <button type="submit" class="btn btn-primary">Add New Property</button>
+                </form>
+          </div>
+        </div>
+    </body>
+</html>

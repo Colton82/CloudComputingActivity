@@ -33,7 +33,20 @@
     </head>
     <body>
         <div layout:fragment="content" class="container-lg">
-            <h1>Properties</h1>
+            <h1 th:text="${property.nameOfProperty}">Property Name</h1>
+            
+            <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    <img th:src="@{/img/homes/house2.jpg}" width="500">
+                  </div>
+                  <div class="col">
+                    <img th:src="@{/img/homes/house3.jpg}" width="500">
+                  </div>
+                </div>
+              </div>
+            
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -47,7 +60,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="property : ${properties}">
+                <tr>
                     <td th:text="${property.nameOfProperty}">Name</td>
                     <td th:text="${property.location}">Location</td>
                     <td th:text="${property.squareFeet}">Square Feet</td>

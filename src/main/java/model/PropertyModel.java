@@ -23,7 +23,6 @@ public class PropertyModel
         this.photoFileName = "C:example/path/variable";
         this.description = "This is a filler property entry";
         this.value = 0;
-
     }
 
     public PropertyModel(int id, String nameOfProperty, String location, int squareFeet, Date dateOfConstruction,
